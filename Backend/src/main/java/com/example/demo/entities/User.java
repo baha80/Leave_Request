@@ -32,4 +32,6 @@ public class User implements Serializable {
     private Roles roles;
     @OneToMany
     public Set<Team> teams;
+    //added solde de conges
+    private int leaveBalance;
 }
