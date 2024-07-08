@@ -33,5 +33,19 @@ public class User implements Serializable {
     @OneToMany
     public Set<Team> teams;
     //added solde de conges
-    private int leaveBalance;
+    //private int leaveBalance;
+
+    @ManyToOne
+    private Team team;
+
+    @ManyToOne
+    private User manager;
+
+
+
+    @OneToMany(mappedBy = "employee")
+    private List<LeaveRequest> leaveRequests;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private LeaveBalance leaveBalance;
 }

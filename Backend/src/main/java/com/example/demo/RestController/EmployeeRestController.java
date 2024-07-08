@@ -26,4 +26,31 @@ public class EmployeeRestController {
     public List<User> getByIdEmployee(){
         return _serviceEmployee.getAllEmployee();
     }
+
+
+    /*@RestController
+@RequestMapping("/api/users")
+public class UserController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ApprovalChainService approvalChainService;
+
+    @GetMapping("/{userId}/approver")
+    public ResponseEntity<User> getApprover(@PathVariable UUID userId) {
+        User employee = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found"));
+        User approver = approvalChainService.getNextApprover(employee);
+        return ResponseEntity.ok(approver);
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUser(@PathVariable UUID userId) {
+        return userRepository.findById(userId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+}*/
 }

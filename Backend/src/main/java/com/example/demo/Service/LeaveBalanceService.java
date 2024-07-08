@@ -23,16 +23,26 @@ public class LeaveBalanceService  {
 
     EmployeeRepository employeeRepository;
 
-    @Transactional(readOnly = true)
     public LeaveBalance getLeaveBalance(UUID userId) {
         User user = userService.getEmployeeById(userId);
-        return leaveBalanceRepository.findByUser_Id(user.getId());
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
 
+        LeaveBalance balance = leaveBalanceRepository.findByUser_Id(userId);
+        if (balance == null) {
+            // Initialize with default values if no balance exists
+            balance = initializeLeaveBalance(userId, 0, 0, 0);
+        }
+        return balance;
     }
 
     @Transactional
     public boolean hasEnoughBalance(UUID userId, LeaveType leaveType, int requestedDays) {
         LeaveBalance balance = getLeaveBalance(userId);
+        if (balance == null) {
+            return false;
+        }
         switch (leaveType) {
             case VACATION:
                 return balance.getVacationDays() >= requestedDays;
@@ -93,15 +103,25 @@ public class LeaveBalanceService  {
     }
 
     @Transactional
-    public void initializeLeaveBalance(User user, int vacationDays, int sickDays, int personalDays) {
+    public LeaveBalance initializeLeaveBalance(UUID userId, int vacationDays, int sickDays, int personalDays) {
+        User user = userService.getEmployeeById(userId);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+
+        LeaveBalance existingBalance = leaveBalanceRepository.findByUser_Id(userId);
+        if (existingBalance != null) {
+            // If we're calling this method to create a default balance, just return the existing one
+            return existingBalance;
+        }
+
         LeaveBalance newBalance = new LeaveBalance();
         newBalance.setUser(user);
         newBalance.setVacationDays(vacationDays);
         newBalance.setSickDays(sickDays);
         newBalance.setPersonalDays(personalDays);
-        leaveBalanceRepository.save(newBalance);
+        return leaveBalanceRepository.save(newBalance);
     }
-
     @Transactional
     public void resetYearlyBalance(UUID userId, int vacationDays, int sickDays, int personalDays) {
         LeaveBalance balance = getLeaveBalance(userId);

@@ -10,4 +10,6 @@ public interface LeaveBalanceRepository extends JpaRepository<LeaveBalance, Long
 
     //find leave balance by user
     LeaveBalance findByUser_Id(UUID id);
+
+
 }

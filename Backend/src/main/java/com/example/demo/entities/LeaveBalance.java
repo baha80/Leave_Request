@@ -11,9 +11,13 @@ public class LeaveBalance {
     private Long id;
 
     @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     private int vacationDays;
     private int sickDays;
     private int personalDays;
+
+
+
 }

@@ -8,6 +8,7 @@ import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -25,4 +26,10 @@ public class Team implements Serializable {
     private String Description;
     @ManyToOne
     public  User user;
+
+    @OneToOne
+    private User teamLead;
+
+    @OneToMany(mappedBy = "team")
+    private Set<User> members;
 }

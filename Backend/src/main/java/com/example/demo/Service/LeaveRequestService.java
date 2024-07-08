@@ -4,13 +4,16 @@ import com.example.demo.Enum.Roles;
 import com.example.demo.Repository.EmployeeRepository;
 import com.example.demo.Repository.LeaveRequestRepository;
 import com.example.demo.entities.Enum.LeaveStatus;
+import com.example.demo.entities.LeaveBalance;
 import com.example.demo.entities.LeaveRequest;
 import com.example.demo.entities.User;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -29,26 +32,37 @@ public class LeaveRequestService {
     private EmailService emailService;
     private EmployeeRepository userService;
 
+    @Autowired
+    private ApprovalChainService approvalChainService;
+
+
     @Transactional
     public LeaveRequest createLeaveRequest(LeaveRequest leaveRequest, UUID employeeId) {
         log.info("Creating leave request for employee ID: {}", employeeId);
 
-        Optional<User> employee = userService.findById(employeeId);
+        User employee = userService.findById(employeeId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid employee ID"));
+
+        LeaveBalance balance = leaveBalanceService.getLeaveBalance(employeeId);
         int daysRequested = calculateDays(leaveRequest.getStartDate(), leaveRequest.getEndDate());
 
         if (!leaveBalanceService.hasEnoughBalance(employeeId, leaveRequest.getLeaveType(), daysRequested)){
             throw new IllegalStateException("Insufficient leave balance");
         }
 
-        leaveRequest.setEmployee(employee.get());
+        leaveRequest.setEmployee(employee);
         leaveRequest.setStatus(LeaveStatus.PENDING);
         leaveRequest.setDurationDays(daysRequested);
 
         LeaveRequest savedRequest = leaveRequestRepository.save(leaveRequest);
 
-        User approver = getNextApprover(employee.get());
-        emailService.sendNotification(approver.getEmail(), "New Leave Request",
-                "A new leave request has been submitted by " + employee.get().getUsername());
+        // Update the user's leave requests list
+        employee.getLeaveRequests().add(savedRequest);
+        userService.save(employee);
+
+        User approver = getNextApprove(employee);
+       // emailService.sendNotification(approver.getEmail(), "New Leave Request",
+               // "A new leave request has been submitted by " + employee.getUsername());
 
         log.info("Leave request created successfully for employee ID: {}", employeeId);
         return savedRequest;
@@ -101,6 +115,8 @@ public class LeaveRequestService {
     }
 
     private boolean canApprove(Optional<User> approver, LeaveRequest request) {
+
+
         switch (approver.get().getRoles()) {
             case TEAM_LEAD:
                 return request.getStatus() == LeaveStatus.PENDING;
@@ -129,15 +145,20 @@ public class LeaveRequestService {
         request.setApproverComments(comments);
     }
 
-    private User getNextApprover(User employee) {
-        if (employee.getRoles() == Roles.TEAM_LEAD) {
-           //return employee.getRoles() == Roles.Manager;
-            //return userService.findManagerByRole(UserRole.MANAGER)
-        } else {
-            //return userService.findManagerByRole(Roles.MANAGER);
-        }
-        return  null;
+//    private User getNextApprover(User employee) {
+//        if (employee.getRoles() == Roles.TEAM_LEAD) {
+//           //return employee.getRoles() == Roles.Manager;
+//            //return userService.findManagerByRole(UserRole.MANAGER)
+//        } else {
+//            //return userService.findManagerByRole(Roles.MANAGER);
+//        }
+//        return  null;
+//    }
+
+    public User getNextApprove(User employee) {
+        return approvalChainService.getNextApprover(employee);
     }
+
 
     private void sendNotifications(LeaveRequest request) {
         String subject = "Leave Request Update";
@@ -159,5 +180,10 @@ public class LeaveRequestService {
 
     private int calculateDays(LocalDate startDate, LocalDate endDate) {
         return (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
+    }
+
+    public LeaveRequest getLeaveRequestById(Long id) {
+        return leaveRequestRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Leave request not found"));
     }
 }
