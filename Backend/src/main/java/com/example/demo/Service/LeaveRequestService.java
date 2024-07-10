@@ -162,8 +162,9 @@ public class LeaveRequestService {
         return (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
     }
 
-    //get all leave request by employee
+    //get all leave request by employee kk qq
     public List<LeaveRequest> getLeaveRequestByEmployee(UUID employeeId) {
         return leaveRequestRepository.findByEmployee_Id(employeeId);
     }
+    //
 }
