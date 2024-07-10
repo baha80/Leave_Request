@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -159,5 +160,10 @@ public class LeaveRequestService {
 
     private int calculateDays(LocalDate startDate, LocalDate endDate) {
         return (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
+    }
+
+    //get all leave request by employee
+    public List<LeaveRequest> getLeaveRequestByEmployee(UUID employeeId) {
+        return leaveRequestRepository.findByEmployee_Id(employeeId);
     }
 }

@@ -4,34 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20aa4e85-8246-4387-a64c-76d126e12690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/LeaveRequestRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveRequestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveRequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/dto/LeaveRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/Enum/LeaveStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/Enum/LeaveType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Enum/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Enum/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Enum/TypeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Enum/TypeEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/EmployeeRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ServiceEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ServiceEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/ServiceContract/IServiceEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/IServiceEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/TypePartenaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/TypePartenaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/IEmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/IEmployeeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/ServiceContract/IServiceEmployee.class" beforeDir="false" />
+    <list default="true" id="20aa4e85-8246-4387-a64c-76d126e12690" name="Changes" comment="backend leave req">
+      <change afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/LeaveBalanceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/ApprovalChainService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/LeaveRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/LeaveRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveRequestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,26 +62,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.demo [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.LeavingMangementApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LeavingMangementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.demo.ServiceContract" />
@@ -140,11 +120,16 @@
       <workItem from="1720173642327" duration="315000" />
       <workItem from="1720174117938" duration="3607000" />
       <workItem from="1720350470723" duration="5427000" />
+      <workItem from="1720517884541" duration="1056000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend leave req" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend leave req" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

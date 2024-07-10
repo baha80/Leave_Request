@@ -5,6 +5,7 @@ import com.example.demo.entities.LeaveRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -29,5 +30,10 @@ public class LeaveRequestController {
     @PostMapping("/{id}/reject")
     public LeaveRequest rejectLeaveRequest(@PathVariable Long id) {
         return leaveRequestService.rejectLeaveRequest(id, UUID.randomUUID(), "Rejected");
+    }
+//getLeaveRequestByEmployee
+    @GetMapping("/employee/{id}/leave-requests")
+    public List<LeaveRequest> getLeaveRequestByEmployee(@PathVariable UUID id) {
+        return leaveRequestService.getLeaveRequestByEmployee(id);
     }
 }

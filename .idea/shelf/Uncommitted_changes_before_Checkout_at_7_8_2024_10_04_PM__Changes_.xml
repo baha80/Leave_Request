@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_7_8_2024_10_04_PM_[Changes]" date="1720472675284" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_8_2024_10_04_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 7/8/2024 10:04 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Team.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Team.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_8_2024_10_04_PM_[Changes]/Team.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/ApprovalChainService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_8_2024_10_04_PM_[Changes]/ApprovalChainService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/RestController/LeaveBalanceController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_8_2024_10_04_PM_[Changes]/LeaveBalanceController.class" />
+  </binary>
+</changelist>
