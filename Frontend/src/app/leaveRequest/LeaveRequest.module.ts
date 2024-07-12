@@ -4,8 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { InitLeaveRequestComponent } from './initLeaveRequest.component';
+import { LeaveRequestComponent } from './LeaveRequest.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LeaveRequestComponent,
+  },
   {
     path: 'init',
     component: InitLeaveRequestComponent,
@@ -19,6 +24,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [],
+  declarations: [LeaveRequestComponent],
 })
 export class LeaveRequestModule {}

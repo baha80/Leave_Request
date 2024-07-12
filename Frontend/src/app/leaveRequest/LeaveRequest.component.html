@@ -1,0 +1,54 @@
+<!-- src/app/leave-requests-list/leave-requests-list.component.html -->
+
+<div class="container mt-4">
+  <button class="btn btn-primary" (click)="initializeLeaveRequest()">
+    Initialize Leave Request
+  </button>
+
+  <h2>Leave Requests for Employee</h2>
+
+  <div class="mb-3">
+    <label for="employeeSelect" class="form-label">Select Employee:</label>
+    <select
+      id="employeeSelect"
+      class="form-select"
+      [(ngModel)]="selectedEmployee"
+      (change)="onEmployeeSelect()"
+    >
+      <option *ngFor="let employee of employees" [ngValue]="employee">
+        {{ employee.username }}
+      </option>
+    </select>
+  </div>
+
+  <table class="table" *ngIf="selectedEmployee">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Approver Comments</th>
+        <th>Leave Type</th>
+        <th>Duration Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of leaveRequests">
+        <td>{{ request.id }}</td>
+        <td>{{ request.startDate }}</td>
+        <td>{{ request.endDate }}</td>
+        <td>{{ request.reason }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.approverComments }}</td>
+        <td>{{ request.leaveType }}</td>
+        <td>{{ request.durationDays }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!selectedEmployee" class="alert alert-info">
+    Select an employee to view leave requests.
+  </div>
+</div>

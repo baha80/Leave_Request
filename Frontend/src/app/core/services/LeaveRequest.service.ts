@@ -25,4 +25,9 @@ export class LeaveRequestService {
     const url = `${this.baseUrl}/api/leave-balances/initialize?userId=${userId}&vacationDays=${vacationDays}&sickDays=${sickDays}&personalDays=${personalDays}`;
     return this.http.post(url, {});
   }
+
+  getLeaveRequestsForEmployee(employeeId: string): Observable<any[]> {
+    const url = `${this.baseUrl}/employee/${employeeId}/leave-requests`;
+    return this.http.get<any[]>(url);
+  }
 }
