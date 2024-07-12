@@ -3,6 +3,7 @@ package com.example.demo.entities;
 
 import com.example.demo.entities.Enum.LeaveStatus;
 import com.example.demo.entities.Enum.LeaveType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 //import javax.persistence.*;
@@ -31,6 +32,12 @@ public class LeaveRequest {
     private LeaveType leaveType;
 
     private int durationDays;
+    @JsonIgnore
+    @ManyToOne
+    private LeaveBalance leaveBalance;
+
+
+
 }
 
 

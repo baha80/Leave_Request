@@ -4,19 +4,17 @@ import com.example.demo.Enum.Roles;
 import com.example.demo.Repository.EmployeeRepository;
 import com.example.demo.Repository.LeaveRequestRepository;
 import com.example.demo.entities.Enum.LeaveStatus;
-import com.example.demo.entities.LeaveBalance;
 import com.example.demo.entities.LeaveRequest;
 import com.example.demo.entities.User;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,6 +22,8 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class LeaveRequestService {
+
+    ApprovalChainService approvalChainService;
     @Autowired
     private LeaveRequestRepository leaveRequestRepository;
     @Autowired
@@ -32,18 +32,37 @@ public class LeaveRequestService {
     private EmailService emailService;
     private EmployeeRepository userService;
 
-    @Autowired
-    private ApprovalChainService approvalChainService;
-
+//    @Transactional
+//    public LeaveRequest createLeaveRequest(LeaveRequest leaveRequest, UUID employeeId) {
+//        log.info("Creating leave request for employee ID: {}", employeeId);
+//
+//        Optional<User> employee = userService.findById(employeeId);
+//        int daysRequested = calculateDays(leaveRequest.getStartDate(), leaveRequest.getEndDate());
+//
+//        if (!leaveBalanceService.hasEnoughBalance(employeeId, leaveRequest.getLeaveType(), daysRequested)){
+//            throw new IllegalStateException("Insufficient leave balance");
+//        }
+//
+//        leaveRequest.setEmployee(employee.get());
+//        leaveRequest.setStatus(LeaveStatus.PENDING);
+//        leaveRequest.setDurationDays(daysRequested);
+//
+//        LeaveRequest savedRequest = leaveRequestRepository.save(leaveRequest);
+//
+//       // User approver = getNextApprover(employee.get());
+////        emailService.sendNotification(approver.getEmail(), "New Leave Request",
+////                "A new leave request has been submitted by " + employee.get().getUsername());
+//
+//        log.info("Leave request created successfully for employee ID: {}", employeeId);
+//        return savedRequest;
+//    }
 
     @Transactional
     public LeaveRequest createLeaveRequest(LeaveRequest leaveRequest, UUID employeeId) {
         log.info("Creating leave request for employee ID: {}", employeeId);
 
         User employee = userService.findById(employeeId)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid employee ID"));
-
-        LeaveBalance balance = leaveBalanceService.getLeaveBalance(employeeId);
+                .orElseThrow(() -> new IllegalArgumentException("Employee not found"));
         int daysRequested = calculateDays(leaveRequest.getStartDate(), leaveRequest.getEndDate());
 
         if (!leaveBalanceService.hasEnoughBalance(employeeId, leaveRequest.getLeaveType(), daysRequested)){
@@ -56,13 +75,9 @@ public class LeaveRequestService {
 
         LeaveRequest savedRequest = leaveRequestRepository.save(leaveRequest);
 
-        // Update the user's leave requests list
-        employee.getLeaveRequests().add(savedRequest);
-        userService.save(employee);
-
-        User approver = getNextApprove(employee);
-       // emailService.sendNotification(approver.getEmail(), "New Leave Request",
-               // "A new leave request has been submitted by " + employee.getUsername());
+        User approver = approvalChainService.getNextApprover(employee);
+      //  emailService.sendNotification(approver.getEmail(), "New Leave Request",
+          //      "A new leave request has been submitted by " + employee.getUsername());
 
         log.info("Leave request created successfully for employee ID: {}", employeeId);
         return savedRequest;
@@ -82,13 +97,13 @@ public class LeaveRequestService {
 
         LeaveRequest updatedRequest = leaveRequestRepository.save(request);
 
-        if (request.getStatus() == LeaveStatus.APPROVED) {
+        if (request.getStatus() == LeaveStatus.APPROVED || request.getStatus() == LeaveStatus.APPROVED_BY_MANAGER || request.getStatus() == LeaveStatus.APPROVED_BY_TEAM_LEAD) {
             leaveBalanceService.deductLeaveBalance(request.getEmployee().getId(),
                     request.getLeaveType(),
                     request.getDurationDays());
         }
 
-        sendNotifications(updatedRequest);
+       // sendNotifications(updatedRequest);
 
         return updatedRequest;
     }
@@ -115,8 +130,6 @@ public class LeaveRequestService {
     }
 
     private boolean canApprove(Optional<User> approver, LeaveRequest request) {
-
-
         switch (approver.get().getRoles()) {
             case TEAM_LEAD:
                 return request.getStatus() == LeaveStatus.PENDING;
@@ -145,36 +158,27 @@ public class LeaveRequestService {
         request.setApproverComments(comments);
     }
 
-//    private User getNextApprover(User employee) {
-//        if (employee.getRoles() == Roles.TEAM_LEAD) {
-//           //return employee.getRoles() == Roles.Manager;
-//            //return userService.findManagerByRole(UserRole.MANAGER)
-//        } else {
-//            //return userService.findManagerByRole(Roles.MANAGER);
-//        }
-//        return  null;
-//    }
-
-    public User getNextApprove(User employee) {
-        return approvalChainService.getNextApprover(employee);
+    private User getNextApprover(User employee) {
+        if (employee.getRoles() == Roles.TEAM_LEAD) {
+           //return employee.getRoles() == Roles.Manager;
+            //return userService.findManagerByRole(UserRole.MANAGER)
+        } else {
+            //return userService.findManagerByRole(Roles.MANAGER);
+        }
+        return  null;
     }
 
+//
 
     private void sendNotifications(LeaveRequest request) {
         String subject = "Leave Request Update";
         String message = "Your leave request status has been updated to: " + request.getStatus();
         emailService.sendNotification(request.getEmployee().getEmail(), subject, message);
 
-        if (request.getStatus() == LeaveStatus.APPROVED_BY_TEAM_LEAD) {
-            User manager = userService.findByRoles(Roles.Manager);
-                    //findManagerByRole(UserRole.MANAGER);
-            emailService.sendNotification(manager.getEmail(), "Leave Request Needs Approval",
+        User nextApprover = approvalChainService.getNextApprover(request.getEmployee());
+        if (nextApprover != null) {
+            emailService.sendNotification(nextApprover.getEmail(), "Leave Request Needs Approval",
                     "A leave request by " + request.getEmployee().getUsername() + " needs your approval");
-        } else if (request.getStatus() == LeaveStatus.APPROVED_BY_MANAGER) {
-            User hr = userService.findByRoles(Roles.Rh);
-                    //findManagerByRole(UserRole.HR);
-            emailService.sendNotification(hr.getEmail(), "Leave Request Needs Final Approval",
-                    "A leave request by " + request.getEmployee().getUsername() + " needs your final approval");
         }
     }
 
@@ -182,8 +186,9 @@ public class LeaveRequestService {
         return (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
     }
 
-    public LeaveRequest getLeaveRequestById(Long id) {
-        return leaveRequestRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Leave request not found"));
+    //get all leave request by employee kk qq
+    public List<LeaveRequest> getLeaveRequestByEmployee(UUID employeeId) {
+        return leaveRequestRepository.findByEmployee_Id(employeeId);
     }
+    //
 }

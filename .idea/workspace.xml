@@ -4,25 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20aa4e85-8246-4387-a64c-76d126e12690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveBalanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ApprovalChainService.java" afterDir="false" />
+    <list default="true" id="20aa4e85-8246-4387-a64c-76d126e12690" name="Changes" comment="backend leave req">
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/TeamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/54bfa909-5fb1-4bae-b99a-ba755d6698a9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/54bfa909-5fb1-4bae-b99a-ba755d6698a9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/LeaveRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Repository/LeaveRequestRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/EmployeeRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveBalanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveBalanceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/RestController/LeaveRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ApprovalChainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ApprovalChainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/IServiceEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/IServiceEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveBalanceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/LeaveRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ServiceEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/Service/ServiceEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/LeaveRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/demo/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/TypeEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Enum/TypeEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/LeavingMangementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/LeavingMangementApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/EmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/LeaveRequestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Repository/LeaveRequestRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/LeaveRequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/RestController/LeaveRequestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/IServiceEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/IServiceEmployee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceService$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveBalanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveRequestService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveRequestService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveRequestService$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/LeaveRequestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/dto/LeaveRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/dto/LeaveRequestDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/CompanyCalender.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/CompanyCalender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Enum/LeaveStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Enum/LeaveStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Enum/LeaveType.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Enum/LeaveType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Feedback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/LeaveBalance.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/LeaveBalance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/LeaveRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/LeaveRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Partenaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Partenaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/TypePartenaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/TypePartenaire.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/example/demo/entities/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,15 +63,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="LeaveRequest" />
+        <entry key="$PROJECT_DIR$" value="bahahaha" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,7 +109,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.LeavingMangementApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;testest&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -131,13 +157,21 @@
       <workItem from="1720172452383" duration="336000" />
       <workItem from="1720173642327" duration="315000" />
       <workItem from="1720174117938" duration="3607000" />
-      <workItem from="1720350470723" duration="15184000" />
-      <workItem from="1720468417459" duration="996000" />
+      <workItem from="1720350470723" duration="5427000" />
+      <workItem from="1720517884541" duration="1056000" />
+      <workItem from="1720703747029" duration="9171000" />
+      <workItem from="1720728926299" duration="9573000" />
+      <workItem from="1720788640398" duration="586000" />
+      <workItem from="1720806720552" duration="3871000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend leave req" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend leave req" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -1,0 +1,8 @@
+<h2>Leave Requests</h2>
+<ul>
+  <li *ngFor="let leaveRequest of leaveRequests">
+    <strong>Request ID:</strong> {{ leaveRequest.id }} <br>
+    <strong>Dates:</strong> {{ leaveRequest.startDate | date:'shortDate' }} to {{ leaveRequest.endDate | date:'shortDate' }} <br>
+    <strong>Status:</strong> {{ leaveRequest.status }}
+  </li>
+</ul>

@@ -25,6 +25,13 @@ public class LeaveBalanceController {
     public ResponseEntity<LeaveBalance> getLeaveBalance(@PathVariable UUID userId) {
         LeaveBalance balance = leaveBalanceService.getLeaveBalance(userId);
         return ResponseEntity.ok(balance);
+    }//http://localhost:8080/api/leave-balances/1
+
+    //getVacationDays
+    @GetMapping("/{userId}/vacation-days")
+    public int getVacationDays(@PathVariable UUID userId) {
+        int vacationDays = leaveBalanceService.getVacationDays(userId);
+        return vacationDays;
     }
 
     @PostMapping("/initialize")

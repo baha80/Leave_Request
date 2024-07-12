@@ -1,0 +1,144 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]" date="1720651172469" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 7/10/2024 11:39 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/RestController/LeaveBalanceController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveBalanceRepository.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveBalanceRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveBalanceRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveRequestService$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/RestController/EmployeeRestController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/EmployeeRestController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveBalanceService.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveBalanceService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveBalanceService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveRequestService.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/LeaveRequestService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveRequestService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Enum/Roles.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Enum/Roles.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/Roles.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Feedback.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Feedback.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/Feedback.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/LeaveBalance.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/LeaveBalance.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveBalance.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/LeaveRequest.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/LeaveRequest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveRequest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/IServiceEmployee.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/IServiceEmployee.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/IServiceEmployee.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Team.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Team.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/Team.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Enum/LeaveStatus.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Enum/LeaveStatus.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveStatus.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/ApprovalChainService.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/EmailService.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/EmailService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/EmailService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/RestController/LeaveRequestController.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/RestController/LeaveRequestController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveRequestController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/dto/LeaveRequestDto.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/dto/LeaveRequestDto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveRequestDto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Partenaire.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Partenaire.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/Partenaire.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/LeavingMangementApplication.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/LeavingMangementApplication.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeavingMangementApplication.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/CompanyCalender.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/CompanyCalender.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/CompanyCalender.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Reservation.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Reservation.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/Reservation.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Enum/TypeEvent.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Enum/TypeEvent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/TypeEvent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Repository/LeaveRequestRepository.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Repository/LeaveRequestRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveRequestRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Service/ServiceEmployee.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/ServiceEmployee.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/Enum/LeaveType.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/Enum/LeaveType.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/LeaveType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/Repository/EmployeeRepository.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/Repository/EmployeeRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/EmployeeRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/User.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Backend/target/classes/com/example/demo/entities/TypePartenaire.class" />
+    <option name="AFTER_PATH" value="Backend/target/classes/com/example/demo/entities/TypePartenaire.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_11_39_PM_[Changes]/TypePartenaire.class" />
+  </binary>
+</changelist>
