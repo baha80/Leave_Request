@@ -12,7 +12,6 @@ public interface IServiceEmployee  {
     public User addEmployee(User employee);
     public User getEmployeeById(@NotNull UUID id);
     public List<User> getAllEmployee();
-
     //create a team
     public Team addTeam(Team team);
 

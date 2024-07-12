@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")  // Replace with your frontend's domain
+
 @RequestMapping("/api/leave-balances")
 public class LeaveBalanceController {
 

@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import com.example.demo.Enum.Roles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,7 @@ public class User implements Serializable {
     private Roles roles;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "team_id")
     private Team team;
 //added now

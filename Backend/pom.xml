@@ -79,11 +79,6 @@
 				<artifactId>hibernate-validator</artifactId>
 				<version>4.0.2.GA</version>
 			</dependency>
-		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>demo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<build>

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")  // Replace with your frontend's domain
+
 public class LeaveRequestController {
 
     @Autowired

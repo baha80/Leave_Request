@@ -11,20 +11,27 @@ export const Approutes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       {
         path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
       {
-        path: 'about',
-        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+        path: 'leaveRequest',
+        loadChildren: () =>
+          import('./leaveRequest/LeaveRequest.module').then(
+            (m) => m.LeaveRequestModule
+          ),
       },
       {
         path: 'component',
-        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
-      }
-    ]
+        loadChildren: () =>
+          import('./component/component.module').then(
+            (m) => m.ComponentsModule
+          ),
+      },
+    ],
   },
   {
     path: '**',
-    redirectTo: '/starter'
-  }
+    redirectTo: '/starter',
+  },
 ];
