@@ -21,9 +21,10 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { InitLeaveRequestComponent } from './leaveRequest/initLeaveRequest.component';
+import { CreateLeaveRequestComponent } from './create-leave-request/create-leave-request.component';
 
 @NgModule({
-  declarations: [AppComponent, SpinnerComponent, InitLeaveRequestComponent],
+  declarations: [AppComponent, SpinnerComponent, InitLeaveRequestComponent ],
   imports: [
     CommonModule,
     BrowserModule,

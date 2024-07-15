@@ -123,8 +123,8 @@ public class LeaveRequestService {
 
         LeaveRequest updatedRequest = leaveRequestRepository.save(request);
 
-        emailService.sendNotification(request.getEmployee().getEmail(), "Leave Request Rejected",
-                "Your leave request has been rejected. Comments: " + comments);
+        //emailService.sendNotification(request.getEmployee().getEmail(), "Leave Request Rejected",
+              //  "Your leave request has been rejected. Comments: " + comments);
 
         return updatedRequest;
     }

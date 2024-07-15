@@ -40,9 +40,9 @@ public class LeaveRequestController {
         return leaveRequestService.approveLeaveRequest(id, approverId, "Approved");
     }//http://localhost:8080/leave-request/1/approve/1
 
-    @PostMapping("/{id}/reject")
-    public LeaveRequest rejectLeaveRequest(@PathVariable Long id) {
-        return leaveRequestService.rejectLeaveRequest(id, UUID.randomUUID(), "Rejected");
+    @PostMapping("/{id}/reject/{rejecterId}")
+    public LeaveRequest rejectLeaveRequest(@PathVariable Long id , @PathVariable UUID rejecterId) {
+        return leaveRequestService.rejectLeaveRequest(id, rejecterId, "Rejected");
     }
 //getLeaveRequestByEmployee
     @GetMapping("/employee/{id}/leave-requests")

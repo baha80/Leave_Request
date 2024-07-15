@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { CreateLeaveRequestComponent } from './create-leave-request/create-leave-request.component';
 
 export const Approutes: Routes = [
   {
@@ -14,6 +15,8 @@ export const Approutes: Routes = [
         loadChildren: () =>
           import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
+      { path: 'create-leave-request', component: CreateLeaveRequestComponent },
+
       {
         path: 'leaveRequest',
         loadChildren: () =>

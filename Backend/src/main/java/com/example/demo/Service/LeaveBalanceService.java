@@ -55,7 +55,7 @@ public class LeaveBalanceService  {
             // Initialize with default values if no balance exists
             balance = initializeLeaveBalance(userId, 10, 0, 0);
         }
-        return balance.getVacationDays();
+        return balance.getSickDays()+balance.getVacationDays()+balance.getPersonalDays();
     }
 
     @Transactional

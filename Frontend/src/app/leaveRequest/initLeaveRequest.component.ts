@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaveRequestService } from '../core/services/LeaveRequest.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './initLeaveRequest.component.html',
@@ -8,14 +9,15 @@ export class InitLeaveRequestComponent implements OnInit {
   employees: any[] = [];
   selectedUserId: string = '';
 
-  vacationDays: number = 7;
-  sickDays: number = 7;
-  personalDays: number = 8;
+  vacationDays: number = 5;
+  sickDays: number = 5;
+  personalDays: number = 5;
 
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private leaveRequestService: LeaveRequestService) {}
+
+  constructor(private leaveRequestService: LeaveRequestService ,private router: Router) {}
 
   ngOnInit(): void {
     this.leaveRequestService.getAllEmployees().subscribe((data) => {
@@ -50,5 +52,9 @@ export class InitLeaveRequestComponent implements OnInit {
   closeAlert() {
     this.successMessage = '';
     this.errorMessage = '';
+  }
+
+  navigateToCreateLeaveRequest() {
+    this.router.navigate(['/create-leave-request']);
   }
 }
