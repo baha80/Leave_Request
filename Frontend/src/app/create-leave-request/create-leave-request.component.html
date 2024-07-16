@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Create Leave Request</h2>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ errorMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="errorMessage = ''"></button>
+    </div>
+  
+    <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ successMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="successMessage = ''"></button>
+    </div>
+  
+    <form (ngSubmit)="onSubmit()" #leaveRequestForm="ngForm">
+        
+      <div class="mb-3">
+        <label for="employee" class="form-label">Employee</label>
+        <select id="employee" name="employee" [(ngModel)]="leaveRequest.employee" class="form-select" required>
+          <option [ngValue]="null" disabled>Select an employee</option>
+          <option *ngFor="let employee of employees" [ngValue]="employee">{{ employee.username }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input type="date" id="startDate" name="startDate" [(ngModel)]="leaveRequest.startDate" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveRequest.endDate" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="reason" class="form-label">Reason</label>
+        <textarea id="reason" name="reason" [(ngModel)]="leaveRequest.reason" class="form-control" rows="3" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="leaveType" class="form-label">Leave Type</label>
+        <select id="leaveType" name="leaveType" [(ngModel)]="leaveRequest.leaveType" class="form-select" required>
+          <option value="" disabled selected>Select leave type</option>
+          <option value="PERSONAL">Personal</option>
+          <option value="SICK">Sick</option>
+          <option value="VACATION">Vacation</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!leaveRequestForm.form.valid">Submit Leave Request</button>
+    </form>
+  </div>
