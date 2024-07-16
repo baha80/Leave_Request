@@ -8,11 +8,39 @@
       <option *ngFor="let employee of employees" [ngValue]="employee">{{ employee.username }}</option>
     </select>
   </div>
-
+<!-- 
   <div *ngIf="selectedEmployee">
-    <p>Total Vacation Days  : {{ vacationDays !== null ? vacationDays : 'Loading...' }}</p> 
+    <p>Total Vacation Days  : {{ vacationDays !== null ? vacationDays : 'Loading...' }}</p>  -->
     <!-- <button class="btn btn-primary" (click)="updateVacationDays()">more details</button> -->
-
+    <div *ngIf="selectedEmployee">
+      <p>
+        Vacation Days Available: {{ vacationDays !== null ? vacationDays : 'Loading...' }}
+        <button class="btn btn-sm btn-info ms-2" (click)="toggleDetailedBalance()">Show More</button>
+      </p>
+  
+      <!-- Modal for detailed balance -->
+      <div class="modal" [ngClass]="{'d-block': showDetailedBalance}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Detailed Leave Balance</h5>
+              <button type="button" class="close" (click)="toggleDetailedBalance()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Vacation Days: {{ vacationDays !== null ? vacationDays : 'Loading...' }}</p>
+              <p>Sick Days: {{ sickDays !== null ? sickDays : 'Loading...' }}</p>
+              <p>Personal Days: {{ personalDays !== null ? personalDays : 'Loading...' }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="toggleDetailedBalance()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-backdrop fade show" *ngIf="showDetailedBalance"></div>
+  
     <table class="table table-striped">
       <thead>
         <tr>

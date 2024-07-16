@@ -35,6 +35,18 @@ public class LeaveBalanceController {
         int vacationDays = leaveBalanceService.getVacationDays(userId);
         return vacationDays;
     }
+    //getSickDays
+    @GetMapping("/{userId}/sick-days")
+    public int getSickDays(@PathVariable UUID userId) {
+        int sickDays = leaveBalanceService.getSickDays(userId);
+        return sickDays;
+    }
+    //getPersonalDays
+    @GetMapping("/{userId}/personal-days")
+    public int getPersonalDays(@PathVariable UUID userId) {
+        int personalDays = leaveBalanceService.getPersonalDays(userId);
+        return personalDays;
+    }
 
     @PostMapping("/initialize")
     public ResponseEntity<LeaveBalance> initializeLeaveBalance(@RequestParam UUID userId,

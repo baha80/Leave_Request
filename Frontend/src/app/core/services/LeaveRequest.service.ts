@@ -58,4 +58,11 @@ export class LeaveRequestService {
   rejectLeaveRequest(leaveRequestId: number, approverId: string): Observable<any> {
     return this.http.post(`${this.baseUrl}/${leaveRequestId}/reject/${approverId}`, {});
   }
+  getSickDays(userId: string): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/api/leave-balances/${userId}/sick-days`);
+  }
+
+  getPersonalDays(userId: string): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/api/leave-balances/${userId}/personal-days`);
+  }
 }

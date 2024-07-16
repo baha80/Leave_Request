@@ -4,12 +4,17 @@ import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './LeaveRequest.component.html',
+  styleUrls: ['./leave-request.component.css'],
+
 })
 export class LeaveRequestComponent implements OnInit {
   employees: any[] = [];
   selectedEmployee: any;
   leaveRequests: any[] = [];
   vacationDays: number | null = null;
+  sickDays: number | null = null;
+  personalDays: number | null = null;
+  showDetailedBalance: boolean = false;
 
   constructor(
     private leaveRequestService: LeaveRequestService,
@@ -109,4 +114,34 @@ export class LeaveRequestComponent implements OnInit {
     this.loadLeaveRequests();
     this.loadVacationDays();
   }
+
+  loadDetailedBalance() {
+    if (this.selectedEmployee) {
+      this.leaveRequestService.getSickDays(this.selectedEmployee.id).subscribe(
+        (days) => {
+          this.sickDays = days;
+        },
+        (error) => {
+          console.error('Error fetching sick days:', error);
+        }
+      );
+
+      this.leaveRequestService.getPersonalDays(this.selectedEmployee.id).subscribe(
+        (days) => {
+          this.personalDays = days;
+        },
+        (error) => {
+          console.error('Error fetching personal days:', error);
+        }
+      );
+    }
+  }
+
+  toggleDetailedBalance() {
+    this.showDetailedBalance = !this.showDetailedBalance;
+    if (this.showDetailedBalance) {
+      this.loadDetailedBalance();
+    }
+  }
+  
 }

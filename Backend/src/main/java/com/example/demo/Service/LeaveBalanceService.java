@@ -55,7 +55,35 @@ public class LeaveBalanceService  {
             // Initialize with default values if no balance exists
             balance = initializeLeaveBalance(userId, 10, 0, 0);
         }
-        return balance.getSickDays()+balance.getVacationDays()+balance.getPersonalDays();
+        return balance.getVacationDays();
+    }
+
+    public int getSickDays(UUID userId) {
+        User user = userService.getEmployeeById(userId);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+
+        LeaveBalance balance = leaveBalanceRepository.findByUser_Id(userId);
+        if (balance == null) {
+            // Initialize with default values if no balance exists
+            balance = initializeLeaveBalance(userId, 0, 10, 0);
+        }
+        return balance.getSickDays();
+    }
+
+    public int getPersonalDays(UUID userId) {
+        User user = userService.getEmployeeById(userId);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+
+        LeaveBalance balance = leaveBalanceRepository.findByUser_Id(userId);
+        if (balance == null) {
+            // Initialize with default values if no balance exists
+            balance = initializeLeaveBalance(userId, 0, 0, 10);
+        }
+        return balance.getPersonalDays();
     }
 
     @Transactional
@@ -152,37 +180,67 @@ public class LeaveBalanceService  {
 //    }
 
 //
-@Transactional
-public LeaveBalance initializeLeaveBalance(UUID userId, int vacationDays, int sickDays, int personalDays) {
-    User user = userService.getEmployeeById(userId);
-    if (user == null) {
-        throw new IllegalArgumentException("User not found");
+//@Transactional //works aaa
+//public LeaveBalance initializeLeaveBalance(UUID userId, int vacationDays, int sickDays, int personalDays) {
+//    User user = userService.getEmployeeById(userId);
+//    if (user == null) {
+//        throw new IllegalArgumentException("User not found");
+//    }
+//
+//    LeaveBalance existingBalance = leaveBalanceRepository.findByUser_Id(userId);
+//    if (existingBalance != null) {
+//        // If we're calling this method to create a default balance, just return the existing one
+//        return existingBalance;
+//    }
+//
+//    // Create new LeaveBalance
+//    LeaveBalance newBalance = new LeaveBalance();
+//    newBalance.setUser(user);
+//    newBalance.setVacationDays(vacationDays);
+//    newBalance.setSickDays(sickDays);
+//    newBalance.setPersonalDays(personalDays);
+//
+//    // Save new LeaveBalance
+//    LeaveBalance savedBalance = leaveBalanceRepository.save(newBalance);
+//
+//    // Update User's leave balance
+//    int totalLeaveBalance = vacationDays + sickDays + personalDays;
+//    user.setLeaveBalance(totalLeaveBalance);  // Assuming the User entity has a leaveBalance field
+//    userService.addEmployee(user);  // Save the updated User entity
+//
+//    return savedBalance;
+//}
+
+
+    @Transactional
+    public LeaveBalance initializeLeaveBalance(UUID userId, int vacationDays, int sickDays, int personalDays) {
+        User user = userService.getEmployeeById(userId);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+
+        LeaveBalance leaveBalance = leaveBalanceRepository.findByUser_Id(userId);
+        if (leaveBalance == null) {
+            // Create new LeaveBalance if it doesn't exist
+            leaveBalance = new LeaveBalance();
+            leaveBalance.setUser(user);
+        }
+
+        // Update LeaveBalance with new values
+        leaveBalance.setVacationDays(vacationDays);
+        leaveBalance.setSickDays(sickDays);
+        leaveBalance.setPersonalDays(personalDays);
+
+        // Save or update LeaveBalance
+        LeaveBalance savedBalance = leaveBalanceRepository.save(leaveBalance);
+
+        // Update User's total leave balance
+        int totalLeaveBalance = vacationDays + sickDays + personalDays;
+        user.setLeaveBalance(totalLeaveBalance);  // Assuming the User entity has a leaveBalance field
+        userService.addEmployee(user);  // Save the updated User entity
+
+        return savedBalance;
     }
-
-    LeaveBalance existingBalance = leaveBalanceRepository.findByUser_Id(userId);
-    if (existingBalance != null) {
-        // If we're calling this method to create a default balance, just return the existing one
-        return existingBalance;
-    }
-
-    // Create new LeaveBalance
-    LeaveBalance newBalance = new LeaveBalance();
-    newBalance.setUser(user);
-    newBalance.setVacationDays(vacationDays);
-    newBalance.setSickDays(sickDays);
-    newBalance.setPersonalDays(personalDays);
-
-    // Save new LeaveBalance
-    LeaveBalance savedBalance = leaveBalanceRepository.save(newBalance);
-
-    // Update User's leave balance
-    int totalLeaveBalance = vacationDays + sickDays + personalDays;
-    user.setLeaveBalance(totalLeaveBalance);  // Assuming the User entity has a leaveBalance field
-    userService.addEmployee(user);  // Save the updated User entity
-
-    return savedBalance;
-}
-
 
 
     @Transactional
